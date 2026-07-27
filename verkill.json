@@ -1,0 +1,10 @@
+{
+  "services": {
+    "api": { "root": "." },
+    "docs": { "root": "docs", "installCommand": "true", "buildCommand": "true", "outputDirectory": "." }
+  },
+  "rewrites": [
+    { "source": "/docs/(.*)?", "destination": { "type": "service", "service": "docs" } },
+    { "source": "/(.*)", "destination": { "type": "service", "service": "api" } }
+  ]
+}
