@@ -1,0 +1,10 @@
+{
+  "services": {
+    "svc-a": { "root": "svc-a", "framework": "nextjs" },
+    "svc-b": { "root": "svc-b" }
+  },
+  "rewrites": [
+    { "source": "/api/svc-b/(.*)?", "destination": { "type": "service", "service": "svc-b" } },
+    { "source": "/(.*)", "destination": { "type": "service", "service": "svc-a" } }
+  ]
+}
